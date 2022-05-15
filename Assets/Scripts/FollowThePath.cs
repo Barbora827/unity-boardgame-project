@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System; 
 public class FollowThePath : MonoBehaviour {
 
     public Transform[] waypoints;
@@ -12,6 +12,10 @@ public class FollowThePath : MonoBehaviour {
 
     public bool moveAllowed = false;
 
+    public int a;
+    public int[] entrance = {2, 3, 4, 5, 6, 7};
+    public int[] end = {10, 11, 12, 13, 14, 15};
+
 	// Use this for initialization
 	private void Start () {
         transform.position = waypoints[waypointIndex].transform.position;
@@ -21,6 +25,7 @@ public class FollowThePath : MonoBehaviour {
 	private void Update () {
         if (moveAllowed)
             Move();
+            
 	}
 
     private void Move()
@@ -35,6 +40,24 @@ public class FollowThePath : MonoBehaviour {
             {
                 waypointIndex += 1;
             }
+
+            print(waypointIndex);
+            FindObjectOfType<AudioManager>().Play("boink");
+        }
+     
+    }
+
+    public void SnakesnLadders(){
+        print("Entrance: " + entrance);
+        a = Array.IndexOf(entrance, waypointIndex);
+        if(a > -1 ){
+            waypointIndex = end[a];
+            transform.position = waypoints[waypointIndex].transform.position;
+            print(a + " and " + waypointIndex);
+        }
+        else{
+            print(a + " and " + waypointIndex);
         }
     }
+    
 }

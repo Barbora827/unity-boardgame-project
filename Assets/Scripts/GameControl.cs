@@ -37,10 +37,12 @@ public class GameControl : MonoBehaviour {
         if (player1.GetComponent<FollowThePath>().waypointIndex > 
             player1StartWaypoint + diceSideThrown)
         {
+            player1.GetComponent<FollowThePath>().SnakesnLadders();
             player1.GetComponent<FollowThePath>().moveAllowed = false;
             player1MoveText.gameObject.SetActive(false);
             player2MoveText.gameObject.SetActive(true);
             player1StartWaypoint = player1.GetComponent<FollowThePath>().waypointIndex - 1;
+            
         }
 
         if (player2.GetComponent<FollowThePath>().waypointIndex >

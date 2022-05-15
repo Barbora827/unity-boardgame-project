@@ -277,7 +277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92834969
 GameObject:
@@ -679,7 +679,7 @@ Transform:
   m_LocalScale: {x: 0.45, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &355938323
 MonoBehaviour:
@@ -738,6 +738,9 @@ MonoBehaviour:
   moveSpeed: 5
   waypointIndex: 0
   moveAllowed: 0
+  a: 0
+  entrance: 020000000300000004000000050000000600000007000000
+  end: 0a0000000b0000000c0000000d0000000e0000000f000000
 --- !u!1 &402922198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &531634383
 GameObject:
@@ -1173,7 +1176,7 @@ Transform:
   m_LocalScale: {x: 0.45, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &576203303
 MonoBehaviour:
@@ -1232,6 +1235,9 @@ MonoBehaviour:
   moveSpeed: 5
   waypointIndex: 0
   moveAllowed: 0
+  a: 0
+  entrance: 020000000300000004000000050000000600000007000000
+  end: 0a0000000b0000000c0000000d0000000e0000000f000000
 --- !u!1 &627879540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1442,7 @@ RectTransform:
   - {fileID: 531634384}
   - {fileID: 10730507}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1553,7 +1559,7 @@ Transform:
   m_LocalScale: {x: 1.2600737, y: 1.2600737, z: 1.2600737}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &809634707
 GameObject:
@@ -1626,7 +1632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917670470
 GameObject:
@@ -2040,7 +2046,7 @@ RectTransform:
   - {fileID: 182598793}
   - {fileID: 2087196198}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2426,7 +2432,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878332457
 GameObject:
@@ -2487,6 +2493,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 675316066}
   m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1991963230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1991963232}
+  - component: {fileID: 1991963231}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1991963231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991963230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893021340b223bf47a07e9d56223956c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Boink
+    clip: {fileID: 8300000, guid: 49cc364458807ff4493d5717305d8f89, type: 3}
+    volume: 0.579
+    pitch: 0
+    source: {fileID: 0}
+--- !u!4 &1991963232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991963230}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7156958, y: 3.8669071, z: -234.04152}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019374841
 GameObject:
