@@ -25,6 +25,7 @@ public class Dice : MonoBehaviour {
     {
         coroutineAllowed = false;
         int randomDiceSide = 0;
+        FindObjectOfType<AudioManager>().Play("DiceShake");
         for (int i = 0; i <= 20; i++)
         {
             randomDiceSide = Random.Range(0, 6);
@@ -36,8 +37,10 @@ public class Dice : MonoBehaviour {
         if (whosTurn == 1)
         {
             GameControl.MovePlayer(1);
+            
         } else if (whosTurn == -1)
         {
+            
             GameControl.MovePlayer(2);
         }
         whosTurn *= -1;

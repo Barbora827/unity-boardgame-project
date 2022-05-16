@@ -23,26 +23,35 @@ public class FollowThePath : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void Update () {
-        if (moveAllowed)
+        
+        if (moveAllowed){
             Move();
+        }
+            
             
 	}
 
     private void Move()
     {
+       
         if (waypointIndex <= waypoints.Length - 1)
         {
+            
             transform.position = Vector2.MoveTowards(transform.position,
             waypoints[waypointIndex].transform.position,
             moveSpeed * Time.deltaTime);
+            
 
             if (transform.position == waypoints[waypointIndex].transform.position)
             {
+                
                 waypointIndex += 1;
+                
             }
 
             print(waypointIndex);
-            FindObjectOfType<AudioManager>().Play("boink");
+            
+            
         }
      
     }
@@ -54,10 +63,14 @@ public class FollowThePath : MonoBehaviour {
             waypointIndex = end[a];
             transform.position = waypoints[waypointIndex].transform.position;
             print(a + " and " + waypointIndex);
+            if(a > 3){
+            FindObjectOfType<AudioManager>().Play("SnakeSlip");
+            }
+            if(a > -1 && a <= 3){
+            FindObjectOfType<AudioManager>().Play("Ladder");
+            }   
         }
-        else{
-            print(a + " and " + waypointIndex);
-        }
+        
     }
     
 }
