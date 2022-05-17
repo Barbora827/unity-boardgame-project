@@ -12,7 +12,8 @@ public class Dice : MonoBehaviour {
     private bool forceRequestSend = false;
     
 
-	// Use this for initialization
+	// Initialization
+    // Initialize accelerometer, load all dice sides images to an array
 	private void Start () {
         lastAcceleration = Input.acceleration;
         rend = GetComponent<SpriteRenderer>();
@@ -24,12 +25,14 @@ public class Dice : MonoBehaviour {
 
     void Update()
     {
+        // Setup the acceleration for phone shake
         Vector3 currentAcceleration = Input.acceleration;
         Vector3 deltaAcceleration = lastAcceleration - currentAcceleration;
         lastAcceleration = currentAcceleration;
 
         float force = deltaAcceleration.magnitude;
 
+        // If the phone is being shaked, the game isn't over and couroutine is allowed, roll the dice
         if(force > 1.0f && forceRequestSend == false) {
             forceRequestSend = true;
             if (!GameControl.gameOver && coroutineAllowed){
@@ -42,16 +45,19 @@ public class Dice : MonoBehaviour {
         }
     }
 
-    private void OnMouseDown()
-    {
+    // If the dice is clicked, the game isn't over and couroutine is allowed, roll the dice
+    private void OnMouseDown(){   
         if (!GameControl.gameOver && coroutineAllowed)
             StartCoroutine("RollTheDice");
     }
 
+    // Determine the dice
     private IEnumerator RollTheDice()
     {
         coroutineAllowed = false;
         int randomDiceSide = 0;
+
+        // Cycle randomly through the dice sides for 20 frames(?) 
         FindObjectOfType<AudioManager>().Play("DiceShake");
         for (int i = 0; i <= 20; i++)
         {
@@ -60,16 +66,15 @@ public class Dice : MonoBehaviour {
             yield return new WaitForSeconds(0.05f);
         }
 
+        // Whoever is on turn will move
         GameControl.diceSideThrown = randomDiceSide + 1;
-        if (whosTurn == 1)
-        {
-            GameControl.MovePlayer(1);
-            
-        } else if (whosTurn == -1)
-        {
-            
+        if (whosTurn == 1){
+            GameControl.MovePlayer(1);   
+        } 
+        else if (whosTurn == -1){
             GameControl.MovePlayer(2);
         }
+        
         whosTurn *= -1;
         coroutineAllowed = true;
     }
