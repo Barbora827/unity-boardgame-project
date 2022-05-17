@@ -2,6 +2,10 @@
 using System; 
 public class FollowThePath : MonoBehaviour {
 
+    public int a;
+    public int[] entrance = {18, 21, 34, 56, 64, 88, 29, 36, 44, 53, 84, 87, 92, 100};
+    public int[] end = {46, 41, 54, 66, 80, 94, 10, 8, 25, 33, 58, 55, 70, 2};
+
     public Transform[] waypoints;
 
     [SerializeField]
@@ -12,17 +16,18 @@ public class FollowThePath : MonoBehaviour {
 
     public bool moveAllowed = false;
 
-    public int a;
-    public int[] entrance = {2, 3, 4, 5, 6, 7};
-    public int[] end = {10, 11, 12, 13, 14, 15};
+    
 
 	// Use this for initialization
 	private void Start () {
+        
         transform.position = waypoints[waypointIndex].transform.position;
+        
 	}
 	
 	// Update is called once per frame
 	private void Update () {
+        
         
         if (moveAllowed){
             Move();
@@ -57,17 +62,18 @@ public class FollowThePath : MonoBehaviour {
     }
 
     public void SnakesnLadders(){
-        print("Entrance: " + entrance);
         a = Array.IndexOf(entrance, waypointIndex);
         if(a > -1 ){
             waypointIndex = end[a];
-            transform.position = waypoints[waypointIndex].transform.position;
-            print(a + " and " + waypointIndex);
-            if(a > 3){
+            transform.position = waypoints[waypointIndex - 1].transform.position;
+            
+            if(a >= 6){
             FindObjectOfType<AudioManager>().Play("SnakeSlip");
+            print("Slipped");
             }
-            if(a > -1 && a <= 3){
+            if(a > -1 && a < 6){
             FindObjectOfType<AudioManager>().Play("Ladder");
+            print("Ladder!");
             }   
         }
         

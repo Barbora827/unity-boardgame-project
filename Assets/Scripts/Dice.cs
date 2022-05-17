@@ -8,12 +8,39 @@ public class Dice : MonoBehaviour {
     private int whosTurn = 1;
     private bool coroutineAllowed = true;
 
+    private Vector3 lastAcceleration;
+    private bool forceRequestSend = false;
+    
+
 	// Use this for initialization
 	private void Start () {
+        lastAcceleration = Input.acceleration;
         rend = GetComponent<SpriteRenderer>();
         diceSides = Resources.LoadAll<Sprite>("DiceSides/");
         rend.sprite = diceSides[5];
+        
+        
 	}
+
+    void Update()
+    {
+        Vector3 currentAcceleration = Input.acceleration;
+        Vector3 deltaAcceleration = lastAcceleration - currentAcceleration;
+        lastAcceleration = currentAcceleration;
+
+        float force = deltaAcceleration.magnitude;
+
+        if(force > 1.0f && forceRequestSend == false) {
+            forceRequestSend = true;
+            if (!GameControl.gameOver && coroutineAllowed){
+            StartCoroutine("RollTheDice");
+            }
+        }
+
+        if(force < 0.01f) {
+            forceRequestSend = false;
+        }
+    }
 
     private void OnMouseDown()
     {
