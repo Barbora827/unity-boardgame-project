@@ -10,11 +10,12 @@ public class StartBtn : MonoBehaviour
     public Button startButton;
 
     void Start(){
-        Button btn = startButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        Button startbtn = startButton.GetComponent<Button>();
+        startbtn.onClick.AddListener(StartTheGame);
+        
     }
-
-    void TaskOnClick(){
+    
+    void StartTheGame(){
         SceneManager.LoadScene("SampleScene");
     }
 }

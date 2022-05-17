@@ -11,11 +11,11 @@ public class CloseGame : MonoBehaviour
 
     void Start(){
         Button btn = startButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        btn.onClick.AddListener(ClickToQuit);
     }
 
-    void TaskOnClick(){
-        SceneManager.LoadScene("StartScene");
+    void ClickToQuit(){
+        Application.Quit();
     }
 }
 

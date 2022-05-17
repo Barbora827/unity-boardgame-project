@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour {
 
-    private static GameObject whoWinsText, player1MoveText, player2MoveText;
+    private static GameObject player1Icon, player2Icon, player1MoveText, player2MoveText;
 
     private static GameObject player1, player2;
 
@@ -19,6 +19,8 @@ public class GameControl : MonoBehaviour {
         gameOver = false;
         player1MoveText = GameObject.Find("Player1MoveText");
         player2MoveText = GameObject.Find("Player2MoveText");
+        player1Icon = GameObject.Find("Player1Icon");
+        player2Icon = GameObject.Find("Player2Icon");
 
         player1 = GameObject.Find("Player1");
         player2 = GameObject.Find("Player2");
@@ -27,7 +29,9 @@ public class GameControl : MonoBehaviour {
         player2.GetComponent<FollowThePath>().moveAllowed = false;
 
         player1MoveText.gameObject.SetActive(true);
+        player1Icon.gameObject.SetActive(true);
         player2MoveText.gameObject.SetActive(false);
+        player2Icon.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,8 +43,10 @@ public class GameControl : MonoBehaviour {
             player1.GetComponent<FollowThePath>().SnakesnLadders();
             player1.GetComponent<FollowThePath>().moveAllowed = false;
             player1MoveText.gameObject.SetActive(false);
+            player1Icon.gameObject.SetActive(false);
             FindObjectOfType<AudioManager>().Stop("BoinkMove");
             player2MoveText.gameObject.SetActive(true);
+            player2Icon.gameObject.SetActive(true);
             player1StartWaypoint = player1.GetComponent<FollowThePath>().waypointIndex - 1;
             
         }
@@ -51,8 +57,10 @@ public class GameControl : MonoBehaviour {
             player2.GetComponent<FollowThePath>().SnakesnLadders();
             player2.GetComponent<FollowThePath>().moveAllowed = false;
             player2MoveText.gameObject.SetActive(false);
+            player2Icon.gameObject.SetActive(false);
             FindObjectOfType<AudioManager>().Stop("BoinkMove");
             player1MoveText.gameObject.SetActive(true);
+            player1Icon.gameObject.SetActive(true);
             player2StartWaypoint = player2.GetComponent<FollowThePath>().waypointIndex - 1;
         }
 
@@ -72,6 +80,10 @@ public class GameControl : MonoBehaviour {
             SceneManager.LoadScene("Win2Scene");
             gameOver = true;
             
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
         }
     }
 
