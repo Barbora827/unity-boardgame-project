@@ -493,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 322.9, y: -92.1}
+  m_AnchoredPosition: {x: 322.9, y: -51.844}
   m_SizeDelta: {x: 121.7881, y: 23.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182598794
@@ -1945,8 +1945,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -17.1, y: 17.1}
-  m_SizeDelta: {x: 120, y: 100}
+  m_AnchoredPosition: {x: -27.100006, y: 4.900406}
+  m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &627970383
 MonoBehaviour:
@@ -2521,8 +2521,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -17.1, y: -14.9}
-  m_SizeDelta: {x: 120, y: 100}
+  m_AnchoredPosition: {x: -27.1, y: -4.7}
+  m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &917670472
 MonoBehaviour:
@@ -3463,7 +3463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 322.9, y: 88.9}
+  m_AnchoredPosition: {x: 322.9, y: 46.7}
   m_SizeDelta: {x: 111.5508, y: 23.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402944665
@@ -3924,8 +3924,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626740607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 435.514, y: 123.649, z: 0}
-  m_LocalScale: {x: 0.463828, y: 0.4658788, z: 0.7371}
+  m_LocalPosition: {x: 435.47, y: 123.65, z: 0}
+  m_LocalScale: {x: 0.3135941, y: 0.3149807, z: 0.49835333}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -4535,6 +4535,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f4e773c908898664380b6e07b2a64670, type: 3}
     volume: 0.25
     pitch: 0.91
+    loop: 0
+    source: {fileID: 0}
+  - name: Checkpoint
+    clip: {fileID: 8300000, guid: 64cb22e3c32771142b011e03aaaedcb7, type: 3}
+    volume: 0.25
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1991963232

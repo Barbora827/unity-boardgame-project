@@ -90,6 +90,10 @@ public class FollowThePath : MonoBehaviour {
             print("Ladder!");
             }   
         }
+
+        if (waypointIndex == 54 || waypointIndex == 85){
+            FindObjectOfType<AudioManager>().Play("Checkpoint");
+        }
         
     }
     
