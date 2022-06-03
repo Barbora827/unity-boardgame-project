@@ -42,7 +42,6 @@ public class GameControl : MonoBehaviour {
     // Update called once per frame
     void Update()
     {   
-        print(gameOver);
         // If player reached his destination (f.e. rolled 3 and moved 3 squares)
         if (player1.GetComponent<FollowThePath>().waypointIndex > 
             player1StartWaypoint + diceSideThrown){
@@ -80,7 +79,7 @@ public class GameControl : MonoBehaviour {
         // If player's destination equals to the last waypoint on board, win the game
         if (player1.GetComponent<FollowThePath>().waypointIndex == 
             player1.GetComponent<FollowThePath>().waypoints.Length){
-            gameOver = true; 
+            GameOver();
             SceneManager.LoadScene("Win1Scene");
              
         }
@@ -88,7 +87,7 @@ public class GameControl : MonoBehaviour {
         // Repeat for Player 2
         if (player2.GetComponent<FollowThePath>().waypointIndex ==
             player2.GetComponent<FollowThePath>().waypoints.Length){
-            gameOver = true;     
+            GameOver();   
             SceneManager.LoadScene("Win2Scene");
              
         }
@@ -115,5 +114,12 @@ public class GameControl : MonoBehaviour {
                 FindObjectOfType<AudioManager>().Play("BoinkMove");
                 break;
         }
+    }
+
+    public void GameOver(){
+        gameOver = true;
+        diceSideThrown = 0;
+        player1StartWaypoint = 0;
+        player2StartWaypoint = 0;
     }
 }
