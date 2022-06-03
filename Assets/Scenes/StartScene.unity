@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 8460627}
   - component: {fileID: 8460626}
   - component: {fileID: 8460625}
-  - component: {fileID: 8460628}
   - component: {fileID: 8460629}
   m_Layer: 5
   m_Name: Play
@@ -246,19 +245,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8460623}
   m_CullTransparentMesh: 1
---- !u!114 &8460628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fec9ea07292f7b49ae0c141a6afb0b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startButton: {fileID: 8460625}
 --- !u!95 &8460629
 Animator:
   serializedVersion: 3
@@ -761,7 +747,6 @@ GameObject:
   - component: {fileID: 949137862}
   - component: {fileID: 949137861}
   - component: {fileID: 949137860}
-  - component: {fileID: 949137863}
   m_Layer: 5
   m_Name: CloseBtn
   m_TagString: Untagged
@@ -870,19 +855,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949137858}
   m_CullTransparentMesh: 1
---- !u!114 &949137863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949137858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 553f78847dcb6a54f91a47f7cf8863ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startButton: {fileID: 949137860}
 --- !u!1 &1172586960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,3 +1588,49 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1806683925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806683927}
+  - component: {fileID: 1806683926}
+  m_Layer: 0
+  m_Name: LevelControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1806683926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806683925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a6f8c34c12b9344be380217ec91d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startButton: {fileID: 8460625}
+  closeButton: {fileID: 949137860}
+  playAgainButton: {fileID: 0}
+--- !u!4 &1806683927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806683925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1069.4253, y: 264.72284, z: -1009.5935}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

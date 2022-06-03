@@ -42,6 +42,7 @@ public class GameControl : MonoBehaviour {
     // Update called once per frame
     void Update()
     {   
+        print(gameOver);
         // If player reached his destination (f.e. rolled 3 and moved 3 squares)
         if (player1.GetComponent<FollowThePath>().waypointIndex > 
             player1StartWaypoint + diceSideThrown){
