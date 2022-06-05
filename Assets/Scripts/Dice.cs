@@ -66,8 +66,9 @@ public class Dice : MonoBehaviour {
             yield return new WaitForSeconds(0.05f);
         }
 
-        // Whoever is on turn will move
+        
         GameControl.diceSideThrown = randomDiceSide + 1;
+        // Whoever is on turn will move
         if (whosTurn == 1){
             GameControl.MovePlayer(1);   
         } 
