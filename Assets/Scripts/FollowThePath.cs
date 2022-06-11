@@ -57,9 +57,6 @@ public class FollowThePath : MonoBehaviour {
                 
                 waypointIndex += 1;
             }
-
-            print(waypointIndex);
-            
         }
     }
 
@@ -81,13 +78,11 @@ public class FollowThePath : MonoBehaviour {
             //Array indexes 6+ are snakes - play the slip sound
             if(a >= 6){
             FindObjectOfType<AudioManager>().Play("SnakeSlip");
-            print("Slipped");
             }
 
             //Array indexes < 6 are ladders - play the ladder sound
             if(a > -1 && a < 6){
             FindObjectOfType<AudioManager>().Play("Ladder");
-            print("Ladder!");
             }   
         }
 
